@@ -54,6 +54,8 @@ function getAverage(value1, value2) {
   if (value1 + value2 > Number.MAX_VALUE) {
     return value1 / 2 + value2 / 2;
   }
+  // to get MIN_VALUE not 0, if value1 and value2 are equal to Number.MIN_VALUE
+  // to get better precision for values that are near to Number.MIN_VALUE
   return (value1 + value2) / 2;
 }
 
