@@ -217,8 +217,18 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  const numberRoot2 = Math.sqrt(n);
+  let isNumberPrime = true;
+  let divider = 2;
+  while (isNumberPrime && divider <= numberRoot2) {
+    const remainderValue = n % divider;
+    if (remainderValue === 0) {
+      isNumberPrime = false;
+    }
+    divider += 1;
+  }
+  return isNumberPrime;
 }
 
 /**
