@@ -358,8 +358,23 @@ function getSumOfDigits(num) {
  *   16  => true
  *   15  => false
  */
-function isPowerOfTwo(/* num */) {
-  throw new Error('Not implemented');
+function isPowerOfTwo(num) {
+  let isNumberPowerOfTwo = true;
+  const isNumberDividedByTwo = num % 2 === 0;
+  if (!isNumberDividedByTwo) {
+    isNumberPowerOfTwo = false;
+  }
+
+  let remainderValue = num;
+  while (isNumberPowerOfTwo && remainderValue !== 2) {
+    remainderValue /= 2;
+    const isRemainderDividedByTwo = remainderValue % 2 === 0;
+    if (!isRemainderDividedByTwo) {
+      isNumberPowerOfTwo = false;
+    }
+  }
+
+  return isNumberPowerOfTwo;
 }
 
 /**
